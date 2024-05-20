@@ -1,0 +1,50 @@
+{
+    "name": "nombre_proyecto",
+    "version": "1.0.0",
+    "main": "main.js",
+    "description": "Descripción de tu aplicación",
+    "author": "Tu Nombre <tu.email@example.com>",
+    "private": true,
+    "type": "module",
+    "scripts": {
+      "start": "electron .",
+      "build": "electron-builder"
+    },
+    "devDependencies": {
+      "axios": "^1.6.4",
+      "electron": "^30.0.6",
+      "electron-builder": "^24.13.3",
+      "laravel-vite-plugin": "^1.0",
+      "vite": "^5.0"
+    },
+    "build": {
+      "appId": "com.ejemplo.app",
+      "files": [
+        "public/**/*",
+        "resources/**/*",
+        "bootstrap/**/*",
+        "config/**/*",
+        "database/**/*",
+        "routes/**/*",
+        "storage/**/*",
+        "vendor/**/*",
+        "composer.json",
+        "artisan",
+        "php/**/*",
+        "main.js"
+      ],
+      "extraResources": [
+        {
+          "from": "php/",
+          "to": "php",
+          "filter": ["**/*"]
+        }
+      ],
+      "win": {
+        "target": "portable"
+      },
+      "linux": {
+        "target": "AppImage"
+      }
+    }
+  }
